@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+
+</head>
+<body>
+<h1><%= title %></h1>
+<form method="POST"  action="/update/" enctype="multipart/form-data">
+<div> 
+  <input type="hidden" name="id" value="<%= records._id%>">
+</div>
+<div>	
+	<input type="text" name="name" value="<%= records.name%>">
+</div>
+<div>	
+	<input type="text" name="email" value="<%= records.email%>">
+</div>
+<div>	
+	<input type="text" name="password" value="<%= records.password%>">
+</div>
+
+<div>	
+	<input type="text" name="cpassword" value="<%= records.cpassword%>">
+</div>
+<div>
+	<input type="radio" name="gender" value="male"> Male
+	<input type="radio" name="gender" value="female"> Female
+</div>
+<div>
+  <input type="file" name="file">
+</div>
+<% if(records.image){%>
+              <img src="/upload/<%= records.image %>" alt="profile image" width="30">
+              <% } %>
+<div>
+    <input type="submit"  name="submit" value="submit">
+</div>
+</form>
+
+</body>
+</html>	

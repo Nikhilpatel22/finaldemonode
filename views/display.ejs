@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+
+</head>
+<body>
+
+
+
+<h1><%= title %></h1>
+
+      <div>
+          <h1><%= title %></h1>
+       <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>password</th>
+            <th>cpassword</th>
+            <th>gender</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%if (records.length > 0){ %>
+          <% records.forEach(function(row){ %>
+          <tr>
+            <td><%= row.name %></td>
+            <td><%= row.email %></td>
+            <td><%= row.password %></td>
+            <td><%= row.cpassword %></td>
+            <td><%= row.gender %></td>
+                       <td><a href="/edit/<%= row._id %>">edit</a>
+              <a href="/delete/<%= row._id %>">delete</a>
+            </td>
+           </tr>
+           <% })}else{ %>
+           <tr>
+                <td>No Record Found</td>
+                
+              </tr>
+            <% } %>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>	

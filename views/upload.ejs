@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<title></title>
+	
+</head>
+<body>
+<h1>Welcome Login Page</h1>	
+<a href="/register">Create new account</a>
+<div>
+  <% if(success !=''){%>
+                            <div>
+                              <strong>Success!</strong> <%= success %>
+                            </div>
+                            <% } %>
+</div>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+<div>
+  <input type="file" name="file" >
+</div>
+<div>
+  <input type="submit" name="upload" value="upload">
+</div>
+</form>
+
+
+
+  <%if(records.length > 0){%>
+  <% records.forEach(function(row){%>
+  <td>
+<% if(row.image){ %>
+              <img src="./public/upload/<%= row.image %>" width="100">
+              <% } %></td> 
+<% })} %>
+
+</body>
+</html>
